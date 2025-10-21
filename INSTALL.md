@@ -1,4 +1,4 @@
-# Malifex Theme Installation Guide
+# Malifex Theme - Installation Guide
 
 ## Quick Install with Omarchy
 
@@ -6,89 +6,40 @@
 omarchy-theme-install https://github.com/YOUR_USERNAME/malifex-theme
 ```
 
-### Post-Installation Steps
+This will automatically install theme files for all detected applications.
 
-After Omarchy installs the theme, some applications need additional configuration:
+## Neovim Configuration
 
-#### 1. Neovim Theme Activation
+After installing via Omarchy, Neovim needs to be configured to use the colorscheme.
 
-Omarchy copies the theme file, but you need to tell Neovim to use it.
+### For Regular Neovim
 
-Add this to your `~/.config/nvim/init.lua`:
+Add to your `~/.config/nvim/init.lua`:
 
 ```lua
 vim.cmd([[colorscheme malifex]])
 ```
 
-Or if using LazyVim, add to your plugins:
+### For LazyVim
+
+Create `~/.config/nvim/lua/plugins/colorscheme.lua`:
 
 ```lua
-{
-  name = "malifex",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    -- Copy neovim.lua to colors directory first
-    vim.cmd([[colorscheme malifex]])
-  end,
+return {
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "malifex",
+    },
+  },
 }
 ```
 
-#### 2. Waybar (if status bar disappears)
+**Important:** Make sure the file returns a table `{ }`, never `nil`.
 
-The waybar.css theme only applies colors and shouldn't affect your layout. If your Waybar disappears or looks wrong:
+## Reloading Applications
 
-1. Make sure you have a proper `~/.config/waybar/config` file
-2. The theme CSS should be imported or used alongside your existing config
-3. Check that Waybar is running: `killall waybar && waybar &`
-
-If issues persist, temporarily disable the Malifex waybar theme:
-
-```bash
-# Backup your waybar style
-mv ~/.config/waybar/style.css ~/.config/waybar/style.css.backup
-```
-
-#### 3. Wallpaper Setup
-
-The theme includes `malifex-background-001.png`. Omarchy should apply it automatically, but if not:
-
-**Using hyprpaper:**
-
-Add to your `~/.config/hypr/hyprland.conf`:
-
-```conf
-exec-once = hyprpaper
-```
-
-And create/update `~/.config/hypr/hyprpaper.conf`:
-
-```conf
-preload = ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
-wallpaper = ,~/path/to/malifex-theme/backgrounds/malifex-background-001.png
-splash = false
-```
-
-**Using swww:**
-
-```bash
-# Start swww daemon
-swww init
-
-# Set wallpaper
-swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png --transition-type fade
-```
-
-Add to your `~/.config/hypr/hyprland.conf`:
-
-```conf
-exec-once = swww init
-exec-once = swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
-```
-
-#### 4. Reload Applications
-
-After theme installation, reload running applications:
+After installation, you may need to restart some applications:
 
 ```bash
 # Reload Waybar
@@ -104,127 +55,182 @@ makoctl reload
 killall hyprpaper && hyprpaper &
 ```
 
-## Troubleshooting
+## Manual Installation by Application
 
-### Waybar Status Bar Missing/Broken
-
-**Symptoms:** After installing the theme, Waybar doesn't appear, or the layout is broken.
-
-**Cause:** The theme now only applies colors, not layouts. If Waybar still has issues, you may need to restart it.
-
-**Solutions:**
-
-1. **Restart Waybar (most common fix):**
-   ```bash
-   killall waybar && waybar &
-   ```
-
-2. **Check if Waybar is running:**
-   ```bash
-   ps aux | grep waybar
-   ```
-
-3. **Check for config errors:**
-   ```bash
-   waybar -l debug
-   ```
-
-4. **Verify you have a valid Waybar config:**
-   Make sure `~/.config/waybar/config` exists and is properly formatted.
-
-5. **If issues persist, temporarily disable theme:**
-   ```bash
-   mv ~/.config/waybar/style.css ~/.config/waybar/style.css.backup
-   killall waybar && waybar &
-   ```
-
-### Neovim Theme Not Applied or Requires Update
-
-**Symptoms:** 
-- Neovim still uses default colors or previous theme
-- Neovim asks for "update" every time you switch to malifex theme
-- Theme doesn't load automatically
-- Error: "invalid spec module: plugins.theme expected a table of specs but a nil"
-
-**Solutions:**
-
-1. **Proper installation after Omarchy:**
-   
-   Copy the theme to Neovim's colors directory:
-   ```bash
-   mkdir -p ~/.config/nvim/colors
-   cp neovim.lua ~/.config/nvim/colors/malifex.lua
-   ```
-
-2. **For LazyVim users (Fix "invalid spec module" error):**
-   
-   Create or edit `~/.config/nvim/lua/plugins/theme.lua`:
-   ```lua
-   return {
-     {
-       "LazyVim/LazyVim",
-       opts = {
-         colorscheme = "malifex",
-       },
-     },
-   }
-   ```
-   
-   **Important:** The file MUST return a table, even if empty. Never return `nil`.
-
-3. **For regular Neovim (non-LazyVim):**
-   
-   Add to `~/.config/nvim/init.lua`:
-   ```lua
-   vim.cmd([[colorscheme malifex]])
-   ```
-
-4. **Test immediately in Neovim:**
-   ```vim
-   :colorscheme malifex
-   ```
-   
-   It should apply instantly without asking for updates.
-
-5. **Restart Neovim:**
-   ```bash
-   nvim
-   ```
-   
-   The theme should now load automatically without requiring updates.
-
-### Error: "invalid spec module: plugins.theme expected a table"
-
-**Cause:** Your `~/.config/nvim/lua/plugins/theme.lua` file is returning `nil` instead of a table.
-
-**Fix:** Edit the file to return a proper table. See example above or use the included `lazyvim-plugin-example.lua` as a template.
-
-### Colors Don't Match Screenshots
-
-Make sure your terminal supports true color:
-
-Add to your shell config (`~/.zshrc` or `~/.bashrc`):
+### Alacritty
 
 ```bash
-export TERM=xterm-256color
+mkdir -p ~/.config/alacritty/themes
+cp alacritty.toml ~/.config/alacritty/themes/malifex.toml
 ```
 
-Or for better true color support:
+Add to your `~/.config/alacritty/alacritty.toml`:
+
+```toml
+[general]
+import = ["~/.config/alacritty/themes/malifex.toml"]
+```
+
+### Ghostty
+
+```bash
+mkdir -p ~/.config/ghostty/themes
+cp ghostty.conf ~/.config/ghostty/themes/malifex
+```
+
+Set in your `~/.config/ghostty/config`:
+
+```
+theme = malifex
+```
+
+### Kitty
+
+```bash
+mkdir -p ~/.config/kitty/themes
+cp kitty.conf ~/.config/kitty/themes/malifex.conf
+```
+
+Add to your `~/.config/kitty/kitty.conf`:
+
+```
+include themes/malifex.conf
+```
+
+### Neovim (Manual)
+
+```bash
+mkdir -p ~/.config/nvim/colors
+cp neovim.lua ~/.config/nvim/colors/malifex.lua
+```
+
+Add to your `init.lua`:
+
+```lua
+vim.cmd([[colorscheme malifex]])
+```
+
+### Hyprland
+
+Add to your `~/.config/hypr/hyprland.conf`:
+
+```
+source = ~/path/to/malifex-theme/hyprland.conf
+```
+
+### Hyprlock
+
+Add to your `~/.config/hypr/hyprlock.conf`:
+
+```
+source = ~/path/to/malifex-theme/hyprlock.conf
+```
+
+### Waybar
+
+```bash
+mkdir -p ~/.config/waybar
+cp waybar.css ~/.config/waybar/malifex.css
+```
+
+Import in your `~/.config/waybar/style.css`:
+
+```css
+@import "malifex.css";
+```
+
+### btop
+
+```bash
+mkdir -p ~/.config/btop/themes
+cp btop.theme ~/.config/btop/themes/malifex.theme
+```
+
+Select "malifex" in btop settings (press `ESC` → Options → Color theme).
+
+### Mako
+
+```bash
+cat mako.ini >> ~/.config/mako/config
+makoctl reload
+```
+
+### Wofi
+
+```bash
+mkdir -p ~/.config/wofi
+cp wofi.css ~/.config/wofi/style.css
+```
+
+### Walker
+
+```bash
+mkdir -p ~/.config/walker
+cp walker.css ~/.config/walker/style.css
+```
+
+### SwayOSD
+
+```bash
+mkdir -p ~/.config/swayosd
+cp swayosd.css ~/.config/swayosd/style.css
+```
+
+### Wallpaper (Hyprpaper)
+
+```bash
+cp hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+```
+
+Or add to your `~/.config/hypr/hyprland.conf`:
+
+```conf
+exec-once = hyprpaper
+```
+
+And configure `~/.config/hypr/hyprpaper.conf`:
+
+```conf
+preload = ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+wallpaper = ,~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+```
+
+## Troubleshooting
+
+### Neovim: "invalid spec module" error
+
+This error means a plugin configuration file is returning `nil` instead of a table.
+
+**Fix:** Check your `~/.config/nvim/lua/plugins/` directory. Every `.lua` file must return a table:
+
+```lua
+return {
+  -- your plugin config here
+}
+```
+
+Never return `nil` or nothing.
+
+### Waybar not appearing
+
+```bash
+killall waybar && waybar &
+```
+
+If still broken, check your Waybar config file exists:
+
+```bash
+cat ~/.config/waybar/config
+```
+
+### Colors not showing correctly
+
+Make sure your terminal supports true color. Add to your shell config:
 
 ```bash
 export COLORTERM=truecolor
 ```
 
-## Manual Installation (Without Omarchy)
-
-See the main [README.md](README.md) for detailed manual installation instructions for each application.
-
 ## Getting Help
 
-If you encounter issues:
-
-1. Check that the application is installed and working with default config
-2. Review the application's logs for errors
-3. Try the theme with a minimal config first
-4. Open an issue on GitHub with details about your setup
-
+For issues or questions, open an issue on the GitHub repository.
