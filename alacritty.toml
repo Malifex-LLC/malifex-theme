@@ -2,6 +2,9 @@
 background = "#000000"
 foreground = "#baa997"
 
+[window]
+opacity = 0.85
+
 [colors.cursor]
 text = "#000000"
 cursor = "#baa997"
