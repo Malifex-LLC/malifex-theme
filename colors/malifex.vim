@@ -13,24 +13,24 @@ let g:colors_name = "malifex"
 
 " Color definitions - mapped to bat/ansi positions
 let background = "#000000"
-let foreground = "#baa997"
-let cursor     = "#baa997"
+let foreground = "#BAA997"
+let cursor     = "#BAA997"
 
 " ANSI Colors (bat compatible)
 let black      = "#000000"    " ansi 0 - background
-let red        = "#9CFFFA"    " ansi 1 - red (errors, functions)
-let green      = "#8b2635"    " ansi 2 - green (strings, added)
-let yellow     = "#baa997"    " ansi 3 - yellow (types, warnings)
-let blue       = "#ff6b6b"    " ansi 4 - blue (keywords, info)
-let magenta    = "#f2e5bc"    " ansi 5 - magenta (constants)
+let red        = "#FF6B6B"    " ansi 1 - red (errors, functions)
+let green      = "#D6886A"    " ansi 2 - green (strings, added)
+let yellow     = "#BAA997"    " ansi 3 - yellow (types, warnings)
+let blue       = "#9CFFFA"    " ansi 4 - blue (keywords, info)
+let magenta    = "#D6886A"    " ansi 5 - magenta (constants)
 let cyan       = "#9CFFFA"    " ansi 6 - cyan (special)
-let white      = "#f2e5bc"    " ansi 7 - foreground
+let white      = "#BAA997"    " ansi 7 - foreground
 let br_black   = "#4d4d4d"    " ansi 8 - bright black (comments)
-let br_red     = "#b1fffc"    " ansi 9 - bright red
-let br_green   = "#a63d4d"    " ansi 10 - bright green
+let br_red     = "#ff8888"    " ansi 9 - bright red
+let br_green   = "#e69d7f"    " ansi 10 - bright green
 let br_yellow  = "#d4c3b2"    " ansi 11 - bright yellow
-let br_blue    = "#ff8888"    " ansi 12 - bright blue
-let br_magenta = "#f7eed1"    " ansi 13 - bright magenta
+let br_blue    = "#b1fffc"    " ansi 12 - bright blue
+let br_magenta = "#e69d7f"    " ansi 13 - bright magenta
 let br_cyan    = "#b1fffc"    " ansi 14 - bright cyan
 let br_white   = "#ffffff"    " ansi 15 - bright white
 
