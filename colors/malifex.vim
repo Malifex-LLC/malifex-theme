@@ -62,7 +62,7 @@ elseif has('terminal')
 endif
 
 " Basic highlight groups
-exe "hi Normal guifg=" . foreground . " guibg=NONE ctermfg=7 ctermbg=NONE"
+exe "hi Normal guifg=" . foreground . " guibg=" . background . " ctermfg=7 ctermbg=0"
 exe "hi Cursor guifg=" . background . " guibg=" . cursor . " ctermfg=0 ctermbg=7"
 exe "hi CursorLine guibg=" . br_black . " ctermbg=8"
 exe "hi CursorColumn guibg=" . br_black . " ctermbg=8"
@@ -124,10 +124,10 @@ exe "hi TabLineFill guibg=" . background . " ctermbg=0"
 exe "hi TabLineSel guifg=" . white . " guibg=" . br_black . " gui=bold ctermfg=7 ctermbg=8 cterm=bold"
 
 " Diff highlighting - bat-style
-exe "hi DiffAdd guifg=" . green . " guibg=NONE gui=bold ctermfg=2 ctermbg=NONE cterm=bold"
-exe "hi DiffChange guifg=" . yellow . " guibg=NONE ctermfg=3 ctermbg=NONE"
-exe "hi DiffDelete guifg=" . red . " guibg=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold"
-exe "hi DiffText guifg=" . br_yellow . " guibg=NONE gui=bold ctermfg=11 ctermbg=NONE cterm=bold"
+exe "hi DiffAdd guifg=" . green . " guibg=" . background . " gui=bold ctermfg=2 ctermbg=0 cterm=bold"
+exe "hi DiffChange guifg=" . yellow . " guibg=" . background . " ctermfg=3 ctermbg=0"
+exe "hi DiffDelete guifg=" . red . " guibg=" . background . " gui=bold ctermfg=1 ctermbg=0 cterm=bold"
+exe "hi DiffText guifg=" . br_yellow . " guibg=" . background . " gui=bold ctermfg=11 ctermbg=0 cterm=bold"
 
 " Git gutter
 exe "hi GitGutterAdd guifg=" . green . " ctermfg=2"
@@ -136,16 +136,16 @@ exe "hi GitGutterDelete guifg=" . red . " ctermfg=1"
 exe "hi GitGutterChangeDelete guifg=" . magenta . " ctermfg=5"
 
 " Error and warning
-exe "hi Error guifg=" . br_red . " guibg=NONE gui=bold ctermfg=9 ctermbg=NONE cterm=bold"
-exe "hi Warning guifg=" . br_yellow . " guibg=NONE gui=bold ctermfg=11 ctermbg=NONE cterm=bold"
+exe "hi Error guifg=" . br_red . " guibg=" . background . " gui=bold ctermfg=9 ctermbg=0 cterm=bold"
+exe "hi Warning guifg=" . br_yellow . " guibg=" . background . " gui=bold ctermfg=11 ctermbg=0 cterm=bold"
 exe "hi ErrorMsg guifg=" . br_red . " gui=bold ctermfg=9 cterm=bold"
 exe "hi WarningMsg guifg=" . br_yellow . " gui=bold ctermfg=11 cterm=bold"
 exe "hi Question guifg=" . green . " gui=bold ctermfg=2 cterm=bold"
 exe "hi MoreMsg guifg=" . green . " gui=bold ctermfg=2 cterm=bold"
 
 " Folding
-exe "hi Folded guifg=" . br_black . " guibg=" . bg_light . " gui=italic ctermfg=8 ctermbg=8 cterm=italic"
-exe "hi FoldColumn guifg=" . br_black . " guibg=NONE ctermfg=8 ctermbg=NONE"
+exe "hi Folded guifg=" . br_black . " guibg=" . background . " gui=italic ctermfg=8 ctermbg=0 cterm=italic"
+exe "hi FoldColumn guifg=" . br_black . " guibg=" . background . " ctermfg=8 ctermbg=0"
 
 " Spelling
 exe "hi SpellBad guisp=" . red . " gui=undercurl ctermfg=1 cterm=underline"
