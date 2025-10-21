@@ -18,16 +18,16 @@ let cursor     = "#baa997"
 
 " ANSI Colors (bat compatible)
 let black      = "#000000"    " ansi 0 - background
-let red        = "#ff6b6b"    " ansi 1 - red (errors, functions)
-let green      = "#8b2635"    " ansi 2 - green (strings, added)
+let red        = "#8b2635"    " ansi 1 - red (errors, functions)
+let green      = "#ff6b6b"    " ansi 2 - green (strings, added)
 let yellow     = "#baa997"    " ansi 3 - yellow (types, warnings)
 let blue       = "#ff6b6b"    " ansi 4 - blue (keywords, info)
 let magenta    = "#f2e5bc"    " ansi 5 - magenta (constants)
 let cyan       = "#537a5a"    " ansi 6 - cyan (special)
 let white      = "#f2e5bc"    " ansi 7 - foreground
 let br_black   = "#4d4d4d"    " ansi 8 - bright black (comments)
-let br_red     = "#ff8888"    " ansi 9 - bright red
-let br_green   = "#a63d4d"    " ansi 10 - bright green
+let br_red     = "#a63d4d"    " ansi 9 - bright red
+let br_green   = "#ff8888"    " ansi 10 - bright green
 let br_yellow  = "#d4c3b2"    " ansi 11 - bright yellow
 let br_blue    = "#ff8888"    " ansi 12 - bright blue
 let br_magenta = "#f7eed1"    " ansi 13 - bright magenta
