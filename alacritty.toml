@@ -32,7 +32,7 @@ background = "CellForeground"
 
 [colors.normal]
 black = "#000000"
-red = "#9CFFFA"
+red = "#ff6b6b"
 green = "#8b2635"
 yellow = "#baa997"
 blue = "#ff6b6b"
@@ -42,7 +42,7 @@ white = "#baa997"
 
 [colors.bright]
 black = "#4d4d4d"
-red = "#b1fffc"
+red = "#ff8888"
 green = "#a63d4d"
 yellow = "#d4c3b2"
 blue = "#ff8888"
@@ -52,7 +52,7 @@ white = "#ffffff"
 
 [colors.dim]
 black = "#baa997"
-red = "#7dccca"
+red = "#cc5555"
 green = "#6f1f2a"
 yellow = "#9a8879"
 blue = "#cc5555"
