@@ -1,4 +1,5 @@
 /* Malifex Theme for Waybar */
+/* This theme only applies colors - it won't override your waybar structure/config */
 
 /* Color variables */
 * {
@@ -18,10 +19,6 @@
     --malifex-bg-lighter: #2a2a2a;
     --malifex-gray: #4d4d4d;
     --malifex-gray-light: #6a6a6a;
-    
-    /* Font */
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 13px;
 }
 
 /* Main bar */
@@ -31,7 +28,7 @@ window#waybar {
     color: var(--malifex-fg);
 }
 
-/* All modules */
+/* All modules - only colors, preserve your layout */
 #workspaces,
 #mode,
 #window,
@@ -49,18 +46,13 @@ window#waybar {
 #idle_inhibitor,
 #mpd,
 #custom-power {
-    padding: 0 10px;
-    margin: 3px 3px;
     background-color: var(--malifex-bg-light);
-    border-radius: 5px;
 }
 
 /* Workspaces */
 #workspaces button {
-    padding: 0 8px;
     background-color: transparent;
     color: var(--malifex-gray-light);
-    border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {

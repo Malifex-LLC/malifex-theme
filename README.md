@@ -33,6 +33,12 @@ omarchy-theme-install https://github.com/YOUR_USERNAME/malifex-theme
 
 This will automatically install the theme for all detected applications on your system.
 
+**⚠️ Post-Install:** Some applications need extra configuration after Omarchy install. See [INSTALL.md](INSTALL.md) for details, especially:
+- Neovim: Add `vim.cmd([[colorscheme malifex]])` to your init.lua
+- Waybar: May need to restart with `killall waybar && waybar &`
+
+📁 **Wallpapers:** Place your wallpapers in the `backgrounds/` directory for Omarchy.
+
 ### Manual Installation
 
 If you prefer manual installation or don't use Omarchy, follow the instructions below for each application.
@@ -89,7 +95,32 @@ include themes/malifex.conf
 
 ### Neovim
 
-#### Using Lazy.nvim
+#### After Omarchy Install
+
+If you installed via Omarchy, you need to activate the theme in Neovim:
+
+1. **Option A - Set in your config** (recommended):
+
+Add to your `~/.config/nvim/init.lua`:
+
+```lua
+vim.cmd([[colorscheme malifex]])
+```
+
+2. **Option B - Manual activation**:
+
+```bash
+mkdir -p ~/.config/nvim/colors
+cp neovim.lua ~/.config/nvim/colors/malifex.lua
+```
+
+Then add to your `init.lua`:
+
+```lua
+vim.cmd([[colorscheme malifex]])
+```
+
+#### Using Lazy.nvim (Standalone)
 
 Add to your LazyVim plugins:
 
@@ -105,22 +136,22 @@ Add to your LazyVim plugins:
 }
 ```
 
-#### Manual Installation
-
-Copy the colorscheme:
+#### Manual Installation (Standalone)
 
 ```bash
+# Copy to Neovim colors directory
 mkdir -p ~/.config/nvim/colors
 cp neovim.lua ~/.config/nvim/colors/malifex.lua
+
+# Or use the full package
+cp -r malifex.nvim ~/.config/nvim/pack/themes/start/
 ```
 
-Set in your `init.lua`:
+Then set in your `init.lua`:
 
 ```lua
 vim.cmd([[colorscheme malifex]])
 ```
-
-Or copy the entire `malifex.nvim` directory to your Neovim colors directory.
 
 ### Hyprland
 
@@ -221,9 +252,21 @@ The Malifex theme is designed with these principles:
 - **Strategic brightness**: Coral red provides necessary pop for errors and highlights
 - **Consistency**: Colors remain consistent across all applications
 
+## Backgrounds/Wallpapers
+
+The `backgrounds/` directory is for wallpapers that complement the Malifex theme. See [backgrounds/README.md](backgrounds/README.md) for recommendations on colors and styles that work best with this theme.
+
 ## Screenshots
 
 > Add your screenshots here after installation!
+
+## Troubleshooting
+
+Having issues with the theme? Check [INSTALL.md](INSTALL.md) for:
+- Waybar status bar disappearing
+- Neovim theme not loading automatically
+- Color display issues
+- Application-specific configuration problems
 
 ## Tags & Topics
 
