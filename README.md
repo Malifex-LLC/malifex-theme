@@ -104,22 +104,33 @@ include themes/malifex.conf
 
 If you installed via Omarchy, you need to activate the theme in Neovim:
 
-1. **Option A - Set in your config** (recommended):
-
-Add to your `~/.config/nvim/init.lua`:
-
-```lua
-vim.cmd([[colorscheme malifex]])
-```
-
-2. **Option B - Manual activation**:
+**Step 1: Copy the colorscheme file**
 
 ```bash
 mkdir -p ~/.config/nvim/colors
 cp neovim.lua ~/.config/nvim/colors/malifex.lua
 ```
 
-Then add to your `init.lua`:
+**Step 2: Configure Neovim to use it**
+
+**For LazyVim users:**
+
+Create or edit `~/.config/nvim/lua/plugins/theme.lua`:
+
+```lua
+return {
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "malifex",
+    },
+  },
+}
+```
+
+**For regular Neovim (non-LazyVim):**
+
+Add to your `~/.config/nvim/init.lua`:
 
 ```lua
 vim.cmd([[colorscheme malifex]])

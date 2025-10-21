@@ -144,6 +144,7 @@ killall hyprpaper && hyprpaper &
 - Neovim still uses default colors or previous theme
 - Neovim asks for "update" every time you switch to malifex theme
 - Theme doesn't load automatically
+- Error: "invalid spec module: plugins.theme expected a table of specs but a nil"
 
 **Solutions:**
 
@@ -155,23 +156,9 @@ killall hyprpaper && hyprpaper &
    cp neovim.lua ~/.config/nvim/colors/malifex.lua
    ```
 
-2. **Set colorscheme in your config:**
+2. **For LazyVim users (Fix "invalid spec module" error):**
    
-   Add to `~/.config/nvim/init.lua`:
-   ```lua
-   vim.cmd([[colorscheme malifex]])
-   ```
-
-3. **Test immediately in Neovim:**
-   ```vim
-   :colorscheme malifex
-   ```
-   
-   It should apply instantly without asking for updates.
-
-4. **For LazyVim users:**
-   
-   The theme file needs to be in `~/.config/nvim/colors/malifex.lua`, then:
+   Create or edit `~/.config/nvim/lua/plugins/theme.lua`:
    ```lua
    return {
      {
@@ -182,6 +169,22 @@ killall hyprpaper && hyprpaper &
      },
    }
    ```
+   
+   **Important:** The file MUST return a table, even if empty. Never return `nil`.
+
+3. **For regular Neovim (non-LazyVim):**
+   
+   Add to `~/.config/nvim/init.lua`:
+   ```lua
+   vim.cmd([[colorscheme malifex]])
+   ```
+
+4. **Test immediately in Neovim:**
+   ```vim
+   :colorscheme malifex
+   ```
+   
+   It should apply instantly without asking for updates.
 
 5. **Restart Neovim:**
    ```bash
@@ -189,6 +192,12 @@ killall hyprpaper && hyprpaper &
    ```
    
    The theme should now load automatically without requiring updates.
+
+### Error: "invalid spec module: plugins.theme expected a table"
+
+**Cause:** Your `~/.config/nvim/lua/plugins/theme.lua` file is returning `nil` instead of a table.
+
+**Fix:** Edit the file to return a proper table. See example above or use the included `lazyvim-plugin-example.lua` as a template.
 
 ### Colors Don't Match Screenshots
 
