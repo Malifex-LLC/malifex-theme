@@ -1,0 +1,67 @@
+# Malifex Theme for btop
+# Place in ~/.config/btop/themes/ and select in btop settings
+
+# Main background
+theme[main_bg]="#000000"
+
+# Main text color
+theme[main_fg]="#baa997"
+
+# Title color
+theme[title]="#baa997"
+
+# Highlight/selected color
+theme[hi_fg]="#ff6b6b"
+
+# Selected background
+theme[selected_bg]="#1a1a1a"
+theme[selected_fg]="#baa997"
+
+# Inactive/disabled color
+theme[inactive_fg]="#4d4d4d"
+
+# Process box colors
+theme[proc_misc]="#baa997"
+theme[cpu_box]="#537a5a"
+theme[mem_box]="#f2e5bc"
+theme[net_box]="#ff6b6b"
+theme[proc_box]="#8b2635"
+
+# Graph colors
+theme[graph_text]="#baa997"
+
+# Meter colors
+theme[meter_bg]="#1a1a1a"
+
+# Gradient colors (used in graphs)
+theme[gradient_start]="#8b2635"
+theme[gradient_mid]="#537a5a"
+theme[gradient_end]="#ff6b6b"
+
+# CPU graph colors
+theme[cpu_start]="#8b2635"
+theme[cpu_mid]="#537a5a"
+theme[cpu_end]="#ff6b6b"
+
+# Temperature colors
+theme[temp_start]="#537a5a"
+theme[temp_mid]="#baa997"
+theme[temp_end]="#ff6b6b"
+
+# Memory/disk graph colors
+theme[mem_start]="#537a5a"
+theme[mem_mid]="#f2e5bc"
+theme[mem_end]="#ff6b6b"
+
+# Network graph colors
+theme[net_start]="#8b2635"
+theme[net_mid]="#537a5a"
+theme[net_end]="#ff6b6b"
+
+# Download/Upload
+theme[download]="#537a5a"
+theme[upload]="#ff6b6b"
+
+# Division lines
+theme[div_line]="#4d4d4d"
+

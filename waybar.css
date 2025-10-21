@@ -1,0 +1,238 @@
+/* Malifex Theme for Waybar */
+
+/* Color variables */
+* {
+    --malifex-bg: #000000;
+    --malifex-fg: #baa997;
+    --malifex-black: #000000;
+    --malifex-red: #ff6b6b;
+    --malifex-green: #8b2635;
+    --malifex-yellow: #baa997;
+    --malifex-blue: #537a5a;
+    --malifex-magenta: #f2e5bc;
+    --malifex-cyan: #ff6b6b;
+    --malifex-white: #f2e5bc;
+    
+    /* Additional shades */
+    --malifex-bg-light: #1a1a1a;
+    --malifex-bg-lighter: #2a2a2a;
+    --malifex-gray: #4d4d4d;
+    --malifex-gray-light: #6a6a6a;
+    
+    /* Font */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+/* Main bar */
+window#waybar {
+    background-color: var(--malifex-bg);
+    border-bottom: 2px solid var(--malifex-gray);
+    color: var(--malifex-fg);
+}
+
+/* All modules */
+#workspaces,
+#mode,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#mpd,
+#custom-power {
+    padding: 0 10px;
+    margin: 3px 3px;
+    background-color: var(--malifex-bg-light);
+    border-radius: 5px;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: var(--malifex-gray-light);
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button:hover {
+    background-color: var(--malifex-bg-lighter);
+    color: var(--malifex-fg);
+}
+
+#workspaces button.active {
+    color: var(--malifex-blue);
+    border-bottom: 2px solid var(--malifex-blue);
+}
+
+#workspaces button.urgent {
+    color: var(--malifex-red);
+    border-bottom: 2px solid var(--malifex-red);
+}
+
+/* Mode */
+#mode {
+    background-color: var(--malifex-red);
+    color: var(--malifex-bg);
+    font-weight: bold;
+}
+
+/* Window title */
+#window {
+    color: var(--malifex-fg);
+}
+
+/* Clock */
+#clock {
+    color: var(--malifex-yellow);
+    font-weight: bold;
+}
+
+/* Battery */
+#battery {
+    color: var(--malifex-blue);
+}
+
+#battery.charging {
+    color: var(--malifex-green);
+}
+
+#battery.warning:not(.charging) {
+    color: var(--malifex-yellow);
+}
+
+#battery.critical:not(.charging) {
+    color: var(--malifex-red);
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* CPU */
+#cpu {
+    color: var(--malifex-blue);
+}
+
+#cpu.warning {
+    color: var(--malifex-yellow);
+}
+
+#cpu.critical {
+    color: var(--malifex-red);
+}
+
+/* Memory */
+#memory {
+    color: var(--malifex-magenta);
+}
+
+#memory.warning {
+    color: var(--malifex-yellow);
+}
+
+#memory.critical {
+    color: var(--malifex-red);
+}
+
+/* Disk */
+#disk {
+    color: var(--malifex-cyan);
+}
+
+/* Temperature */
+#temperature {
+    color: var(--malifex-blue);
+}
+
+#temperature.critical {
+    color: var(--malifex-red);
+}
+
+/* Backlight */
+#backlight {
+    color: var(--malifex-yellow);
+}
+
+/* Network */
+#network {
+    color: var(--malifex-blue);
+}
+
+#network.disconnected {
+    color: var(--malifex-gray-light);
+}
+
+/* Pulseaudio */
+#pulseaudio {
+    color: var(--malifex-magenta);
+}
+
+#pulseaudio.muted {
+    color: var(--malifex-gray-light);
+}
+
+/* Tray */
+#tray {
+    background-color: var(--malifex-bg-light);
+}
+
+#tray > .passive {
+    opacity: 0.7;
+}
+
+#tray > .needs-attention {
+    color: var(--malifex-red);
+}
+
+/* Idle inhibitor */
+#idle_inhibitor {
+    color: var(--malifex-gray-light);
+}
+
+#idle_inhibitor.activated {
+    color: var(--malifex-yellow);
+}
+
+/* MPD */
+#mpd {
+    color: var(--malifex-magenta);
+}
+
+#mpd.stopped {
+    color: var(--malifex-gray-light);
+}
+
+#mpd.paused {
+    color: var(--malifex-gray-light);
+}
+
+/* Custom modules */
+#custom-power {
+    color: var(--malifex-red);
+    font-weight: bold;
+}
+
+/* Tooltips */
+tooltip {
+    background-color: var(--malifex-bg-light);
+    border: 1px solid var(--malifex-gray);
+    border-radius: 5px;
+    color: var(--malifex-fg);
+}
+
+tooltip label {
+    color: var(--malifex-fg);
+}
+
