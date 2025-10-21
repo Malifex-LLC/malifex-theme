@@ -1,44 +1,81 @@
 # Malifex Theme Backgrounds
 
-Place your wallpapers here to use with Omarchy and Hyprland.
+This directory contains wallpapers designed to complement the Malifex color theme.
 
-## Recommended Colors
+## Default Wallpaper
 
-For the best visual harmony with the Malifex theme, choose wallpapers with:
+**`malifex-background-001.png`** - The default Malifex wallpaper, optimized for the theme's dark, earthy aesthetic.
 
-- **Dark backgrounds** (black or very dark tones)
-- **Warm earth tones**: browns, tans, burgundy, sage green
-- **Muted colors**: avoid bright, saturated colors
-- **Natural themes**: landscapes, abstract art, minimal designs
-
-## Suggested Wallpapers
-
-You can use wallpapers from sources like:
-- [Unsplash](https://unsplash.com) - Search for "dark landscape", "earth tones", "minimal dark"
-- [Wallhaven](https://wallhaven.cc) - Filter by dark colors and earth tones
-- [Simple Desktops](http://simpledesktops.com) - Minimal wallpapers
+A symlink `default.png` points to this wallpaper for easy reference.
 
 ## Using with Omarchy
 
-Place your wallpaper files (jpg, png) in this directory and Omarchy will be able to use them.
+Omarchy will automatically detect and use wallpapers from this directory when you install the theme:
+
+```bash
+omarchy-theme-install https://github.com/YOUR_USERNAME/malifex-theme
+```
+
+The default wallpaper will be applied automatically.
 
 ## Using with Hyprland
 
-To set a wallpaper manually with Hyprland:
+### With hyprpaper
 
-```bash
-# Using hyprpaper
-preload = ~/path/to/malifex-theme/backgrounds/wallpaper.png
-wallpaper = ,~/path/to/malifex-theme/backgrounds/wallpaper.png
+Add to your `~/.config/hypr/hyprpaper.conf`:
 
-# Or using swww
-swww img ~/path/to/malifex-theme/backgrounds/wallpaper.png
+```conf
+preload = ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+wallpaper = ,~/path/to/malifex-theme/backgrounds/malifex-background-001.png
 ```
 
-## Color Recommendations
+### With swww
 
-When selecting or creating wallpapers, these hex colors work best:
-- Background: `#000000` (pure black)
-- Accents: `#8b2635` (burgundy), `#537a5a` (sage), `#baa997` (tan)
-- Highlights: `#ff6b6b` (coral), `#f2e5bc` (cream)
+```bash
+swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png --transition-type fade
+```
+
+### Direct in Hyprland config
+
+Add to your `~/.config/hypr/hyprland.conf`:
+
+```conf
+exec-once = hyprpaper
+# Or
+exec-once = swww init && swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+```
+
+## Adding Your Own Wallpapers
+
+Place additional wallpapers in this directory. For best visual harmony with the Malifex theme, choose images with:
+
+### Recommended Colors
+
+- **Dark backgrounds**: Black or very dark tones (`#000000` to `#1a1a1a`)
+- **Warm earth tones**: Browns, tans, burgundy (`#8b2635`), sage green (`#537a5a`)
+- **Muted colors**: Avoid bright, saturated colors
+- **Accent colors**: Coral red (`#ff6b6b`), cream (`#f2e5bc`), beige (`#baa997`)
+
+### Recommended Themes
+
+- Dark abstract patterns
+- Minimalist designs
+- Natural landscapes at dusk/night
+- Earth-toned geometric patterns
+- Muted vintage photography
+
+## Wallpaper Sources
+
+Find complementary wallpapers at:
+- [Unsplash](https://unsplash.com) - Search: "dark landscape", "earth tones", "minimal dark"
+- [Wallhaven](https://wallhaven.cc) - Filter by dark colors and earth tones
+- [Simple Desktops](http://simpledesktops.com) - Minimal wallpapers
+
+## Technical Details
+
+**malifex-background-001.png:**
+- Resolution: High-res (suitable for 4K displays)
+- Color palette: Matches Malifex theme colors
+- Style: Dark, earthy, minimal
+- Format: PNG with transparency support
 

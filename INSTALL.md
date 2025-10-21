@@ -49,7 +49,44 @@ If issues persist, temporarily disable the Malifex waybar theme:
 mv ~/.config/waybar/style.css ~/.config/waybar/style.css.backup
 ```
 
-#### 3. Reload Applications
+#### 3. Wallpaper Setup
+
+The theme includes `malifex-background-001.png`. Omarchy should apply it automatically, but if not:
+
+**Using hyprpaper:**
+
+Add to your `~/.config/hypr/hyprland.conf`:
+
+```conf
+exec-once = hyprpaper
+```
+
+And create/update `~/.config/hypr/hyprpaper.conf`:
+
+```conf
+preload = ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+wallpaper = ,~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+splash = false
+```
+
+**Using swww:**
+
+```bash
+# Start swww daemon
+swww init
+
+# Set wallpaper
+swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png --transition-type fade
+```
+
+Add to your `~/.config/hypr/hyprland.conf`:
+
+```conf
+exec-once = swww init
+exec-once = swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+```
+
+#### 4. Reload Applications
 
 After theme installation, reload running applications:
 
@@ -62,6 +99,9 @@ hyprctl reload
 
 # Reload Mako (notifications)
 makoctl reload
+
+# Reload wallpaper (if using hyprpaper)
+killall hyprpaper && hyprpaper &
 ```
 
 ## Troubleshooting

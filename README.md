@@ -37,7 +37,7 @@ This will automatically install the theme for all detected applications on your 
 - Neovim: Add `vim.cmd([[colorscheme malifex]])` to your init.lua
 - Waybar: May need to restart with `killall waybar && waybar &`
 
-📁 **Wallpapers:** Place your wallpapers in the `backgrounds/` directory for Omarchy.
+🎨 **Wallpaper Included:** The theme includes `malifex-background-001.png` - a custom wallpaper designed to complement the color scheme. Omarchy will automatically apply it, or use the included `hyprpaper.conf` configuration.
 
 ### Manual Installation
 
@@ -252,9 +252,38 @@ The Malifex theme is designed with these principles:
 - **Strategic brightness**: Coral red provides necessary pop for errors and highlights
 - **Consistency**: Colors remain consistent across all applications
 
-## Backgrounds/Wallpapers
+## Wallpaper
 
-The `backgrounds/` directory is for wallpapers that complement the Malifex theme. See [backgrounds/README.md](backgrounds/README.md) for recommendations on colors and styles that work best with this theme.
+The theme includes a custom-designed wallpaper (`malifex-background-001.png`) that perfectly complements the color scheme.
+
+### Automatic Installation
+
+When you install via Omarchy, the wallpaper is automatically applied.
+
+### Manual Installation
+
+**Using hyprpaper:**
+
+Copy the config or add to your `~/.config/hypr/hyprpaper.conf`:
+
+```bash
+cp hyprpaper.conf ~/.config/hypr/hyprpaper.conf
+```
+
+Or manually add:
+
+```conf
+preload = ~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+wallpaper = ,~/path/to/malifex-theme/backgrounds/malifex-background-001.png
+```
+
+**Using swww:**
+
+```bash
+swww img ~/path/to/malifex-theme/backgrounds/malifex-background-001.png --transition-type fade
+```
+
+See [backgrounds/README.md](backgrounds/README.md) for more wallpaper options and customization.
 
 ## Screenshots
 
