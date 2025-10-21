@@ -18,20 +18,20 @@ let cursor     = "#baa997"
 
 " ANSI Colors (bat compatible)
 let black      = "#000000"    " ansi 0 - background
-let red        = "#ff6b6b"    " ansi 1 - red (keywords, directories)
-let green      = "#baa997"    " ansi 2 - green (strings)
-let yellow     = "#f2e5bc"    " ansi 3 - yellow (types, warnings)
-let blue       = "#ff6b6b"    " ansi 4 - blue (keywords, directories)
-let magenta    = "#f2e5bc"    " ansi 5 - magenta (constants)
-let cyan       = "#537a5a"    " ansi 6 - cyan (special)
+let red        = "#ff6b6b"    " ansi 1 - red
+let green      = "#8b2635"    " ansi 2 - green
+let yellow     = "#baa997"    " ansi 3 - yellow
+let blue       = "#ff6b6b"    " ansi 4 - blue
+let magenta    = "#537a5a"    " ansi 5 - magenta
+let cyan       = "#f2e5bc"    " ansi 6 - cyan
 let white      = "#f2e5bc"    " ansi 7 - foreground
 let br_black   = "#4d4d4d"    " ansi 8 - bright black (comments)
-let br_red     = "#d44d4d"    " ansi 9 - bright red (function names)
-let br_green   = "#d4c3b2"    " ansi 10 - bright green (bright strings)
+let br_red     = "#ff8888"    " ansi 9 - bright red
+let br_green   = "#a63d4d"    " ansi 10 - bright green
 let br_yellow  = "#d4c3b2"    " ansi 11 - bright yellow
 let br_blue    = "#ff8888"    " ansi 12 - bright blue
-let br_magenta = "#f7eed1"    " ansi 13 - bright magenta
-let br_cyan    = "#6a9470"    " ansi 14 - bright cyan
+let br_magenta = "#6a9470"    " ansi 13 - bright magenta
+let br_cyan    = "#f7eed1"    " ansi 14 - bright cyan
 let br_white   = "#ffffff"    " ansi 15 - bright white
 
 " Terminal colors
@@ -78,7 +78,7 @@ exe "hi Float guifg=" . cyan . " ctermfg=6"
 exe "hi Boolean guifg=" . red . " ctermfg=1"
 exe "hi Constant guifg=" . magenta . " ctermfg=5"
 exe "hi Identifier guifg=" . white . " ctermfg=7"
-exe "hi Function guifg=" . br_red . " gui=bold ctermfg=9 cterm=bold"
+exe "hi Function guifg=" . red . " gui=bold ctermfg=1 cterm=bold"
 exe "hi Statement guifg=" . blue . " gui=bold ctermfg=4 cterm=bold"
 exe "hi Conditional guifg=" . blue . " ctermfg=4"
 exe "hi Repeat guifg=" . blue . " ctermfg=4"
@@ -214,10 +214,10 @@ exe "hi @character guifg=" . br_green . " ctermfg=10"
 exe "hi @number guifg=" . cyan . " ctermfg=6"
 exe "hi @boolean guifg=" . red . " gui=bold ctermfg=1 cterm=bold"
 exe "hi @float guifg=" . cyan . " ctermfg=6"
-exe "hi @function guifg=" . br_red . " gui=bold ctermfg=9 cterm=bold"
-exe "hi @function.builtin guifg=" . br_red . " gui=bold,italic ctermfg=9 cterm=bold,italic"
-exe "hi @function.macro guifg=" . br_red . " gui=bold ctermfg=9 cterm=bold"
-exe "hi @method guifg=" . br_red . " ctermfg=9"
+exe "hi @function guifg=" . red . " gui=bold ctermfg=1 cterm=bold"
+exe "hi @function.builtin guifg=" . red . " gui=bold,italic ctermfg=1 cterm=bold,italic"
+exe "hi @function.macro guifg=" . red . " gui=bold ctermfg=1 cterm=bold"
+exe "hi @method guifg=" . red . " ctermfg=1"
 exe "hi @constructor guifg=" . yellow . " gui=bold ctermfg=3 cterm=bold"
 exe "hi @parameter guifg=" . white . " gui=italic ctermfg=7 cterm=italic"
 exe "hi @keyword guifg=" . red . " gui=bold ctermfg=1 cterm=bold"

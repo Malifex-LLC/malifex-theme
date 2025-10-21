@@ -36,8 +36,8 @@ red = "#ff6b6b"
 green = "#8b2635"
 yellow = "#baa997"
 blue = "#ff6b6b"
-magenta = "#f2e5bc"
-cyan = "#537a5a"
+magenta = "#537a5a"
+cyan = "#f2e5bc"
 white = "#f2e5bc"
 
 [colors.bright]
