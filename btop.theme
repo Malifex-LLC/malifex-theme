@@ -1,67 +1,70 @@
-# Malifex Theme for btop
-# Place in ~/.config/btop/themes/ and select in btop settings
-
-# Main background
-theme[main_bg]="#000000"
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]=""
 
 # Main text color
 theme[main_fg]="#baa997"
 
-# Title color
-theme[title]="#baa997"
+# Title color for boxes
+theme[title]="#f2e5bc"
 
-# Highlight/selected color
-theme[hi_fg]="#ff6b6b"
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#f7eed1"
 
-# Selected background
-theme[selected_bg]="#1a1a1a"
+# Background color of selected item in processes box
+theme[selected_bg]="#4d4d4d"
+
+# Foreground color of selected item in processes box
 theme[selected_fg]="#baa997"
 
-# Inactive/disabled color
+# Color of inactive/disabled text
 theme[inactive_fg]="#4d4d4d"
 
-# Process box colors
-theme[proc_misc]="#baa997"
-theme[cpu_box]="#537a5a"
-theme[mem_box]="#f2e5bc"
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#f2e5bc"
+
+# Box outline and divider line color
+theme[cpu_box]="#ff6b6b"
+theme[mem_box]="#ff6b6b"
 theme[net_box]="#ff6b6b"
-theme[proc_box]="#8b2635"
-
-# Graph colors
-theme[graph_text]="#baa997"
-
-# Meter colors
-theme[meter_bg]="#1a1a1a"
-
-# Gradient colors (used in graphs)
-theme[gradient_start]="#8b2635"
-theme[gradient_mid]="#537a5a"
-theme[gradient_end]="#ff6b6b"
-
-# CPU graph colors
-theme[cpu_start]="#8b2635"
-theme[cpu_mid]="#537a5a"
-theme[cpu_end]="#ff6b6b"
-
-# Temperature colors
-theme[temp_start]="#537a5a"
-theme[temp_mid]="#baa997"
-theme[temp_end]="#ff6b6b"
-
-# Memory/disk graph colors
-theme[mem_start]="#537a5a"
-theme[mem_mid]="#f2e5bc"
-theme[mem_end]="#ff6b6b"
-
-# Network graph colors
-theme[net_start]="#8b2635"
-theme[net_mid]="#537a5a"
-theme[net_end]="#ff6b6b"
-
-# Download/Upload
-theme[download]="#537a5a"
-theme[upload]="#ff6b6b"
-
-# Division lines
+theme[proc_box]="#ff6b6b"
 theme[div_line]="#4d4d4d"
 
+# Gradient for all meters and graphs
+theme[temp_start]="#ff6b6b"
+theme[temp_mid]="#537a5a"
+theme[temp_end]="#8b2635"
+
+
+theme[cpu_start]="#ff6b6b"
+theme[cpu_mid]="#537a5a"
+theme[cpu_end]="#8b2635"
+
+
+theme[free_start]="#537a5a"
+theme[free_mid]="#baa997"
+theme[free_end]="#baa997"
+
+
+theme[cached_start]="#baa997"
+theme[cached_mid]="#baa997"
+theme[cached_end]="#baa997"
+
+
+theme[available_start]="#ff6b6b"
+theme[available_mid]="#ff6b6b"
+theme[available_end]="#ff6b6b"
+
+
+theme[used_start]="#8b2635"
+theme[used_mid]="#8b2635"
+theme[used_end]="#8b2635"
+
+
+theme[download_start]="#baa997"
+theme[download_mid]="#ff6b6b"
+theme[download_end]="#6a9470"
+
+
+theme[upload_start]="#baa997"
+theme[upload_mid]="#ff6b6b"
+theme[upload_end]="#6a9470"

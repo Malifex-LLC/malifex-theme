@@ -1,52 +1,49 @@
-/* Malifex Theme for Wofi (app launcher) */
-/* Colors only - preserves your layout configuration */
+@define-color bg #000000;
+@define-color fg #baa997;
+@define-color gray1 #537a5a;
+@define-color gray2 #4d4d4d;
+@define-color gray3 #8b2635;
+@define-color gray4 #baa997;
+@define-color gray5 #f2e5bc;
+@define-color fg_bright #ffffff;
 
 window {
-    background-color: #000000;
-    border-color: #537a5a;
+    background-color: @bg;
+    border: 2px solid @gray3;
 }
 
-#input {
-    background-color: #1a1a1a;
-    color: #baa997;
-    border-bottom-color: #537a5a;
+input {
+    background-color: @bg;
+    color: @fg;
+    border: 1px solid @gray2;
 }
 
-#inner-box {
-    background-color: #000000;
-}
-
-#outer-box {
-    background-color: #000000;
-}
-
-#scroll {
-    background-color: #000000;
-}
-
-#text {
-    color: #baa997;
+input:selected {
+    background-color: @gray1;
+    color: @fg_bright;
 }
 
 #entry {
-    background-color: #000000;
+    color: @fg;
+    background-color: @bg;
+    padding: 5px;
+    margin: 2px;
 }
 
 #entry:selected {
-    background-color: #1a1a1a;
-    color: #baa997;
-    border-left-color: #537a5a;
+    background-color: @gray1;
+    color: @fg_bright;
 }
 
-#entry:hover {
-    background-color: #1a1a1a;
+scrollbar {
+    background-color: @bg;
 }
 
-#text:selected {
-    color: #baa997;
+scrollbar slider {
+    background-color: @gray2;
+    border-radius: 5px;
 }
 
-/* No results */
-#entry.nomatch {
-    color: #4d4d4d;
+scrollbar slider:hover {
+    background-color: @gray3;
 }
