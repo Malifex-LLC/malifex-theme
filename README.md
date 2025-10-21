@@ -16,7 +16,7 @@ A dark, earthy color scheme with warm tones and subtle contrast, designed for co
 | Red        | `#ff6b6b` | Errors, highlights, coral red  |
 | Green      | `#8b2635` | Strings, success, burgundy     |
 | Yellow     | `#baa997` | Types, warnings, beige         |
-| Blue       | `#537a5a` | Functions, info, sage green    |
+| Blue       | `#d6886a` | Functions, info, warm peach    |
 | Magenta    | `#f2e5bc` | Constants, cream               |
 | Cyan       | `#ff6b6b` | Special, coral red             |
 | White      | `#f2e5bc` | Bright text, cream             |
@@ -58,7 +58,7 @@ The Malifex theme is designed with these principles:
 
 - **Low contrast background**: Pure black provides deep darkness without eye strain
 - **Warm foreground**: Beige/tan offers comfortable readability with earthy warmth  
-- **Earthy accents**: Natural, muted tones (burgundy, sage, cream)
+- **Earthy accents**: Natural, muted tones (burgundy, warm peach, cream)
 - **Strategic brightness**: Coral red provides necessary pop for errors and highlights
 - **Consistency**: Colors remain consistent across all applications
 
