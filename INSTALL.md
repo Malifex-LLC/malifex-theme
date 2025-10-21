@@ -106,20 +106,22 @@ killall hyprpaper && hyprpaper &
 
 ## Troubleshooting
 
-### Waybar Status Bar Missing
+### Waybar Status Bar Missing/Broken
 
-**Symptoms:** After installing the theme, Waybar doesn't appear or appears broken.
+**Symptoms:** After installing the theme, Waybar doesn't appear, or the layout is broken.
+
+**Cause:** The theme now only applies colors, not layouts. If Waybar still has issues, you may need to restart it.
 
 **Solutions:**
 
-1. **Check if Waybar is running:**
-   ```bash
-   ps aux | grep waybar
-   ```
-
-2. **Restart Waybar:**
+1. **Restart Waybar (most common fix):**
    ```bash
    killall waybar && waybar &
+   ```
+
+2. **Check if Waybar is running:**
+   ```bash
+   ps aux | grep waybar
    ```
 
 3. **Check for config errors:**
@@ -127,38 +129,66 @@ killall hyprpaper && hyprpaper &
    waybar -l debug
    ```
 
-4. **Temporarily disable theme:**
+4. **Verify you have a valid Waybar config:**
+   Make sure `~/.config/waybar/config` exists and is properly formatted.
+
+5. **If issues persist, temporarily disable theme:**
    ```bash
-   mv ~/.config/waybar/style.css ~/.config/waybar/style.css.malifex
-   # Restart Waybar to use default styling
+   mv ~/.config/waybar/style.css ~/.config/waybar/style.css.backup
+   killall waybar && waybar &
    ```
 
-### Neovim Theme Not Applied
+### Neovim Theme Not Applied or Requires Update
 
-**Symptoms:** Neovim still uses default colors or previous theme.
+**Symptoms:** 
+- Neovim still uses default colors or previous theme
+- Neovim asks for "update" every time you switch to malifex theme
+- Theme doesn't load automatically
 
 **Solutions:**
 
-1. **Ensure colorscheme is set in config:**
+1. **Proper installation after Omarchy:**
    
-   Check `~/.config/nvim/init.lua` contains:
-   ```lua
-   vim.cmd([[colorscheme malifex]])
-   ```
-
-2. **Manually copy theme file:**
+   Copy the theme to Neovim's colors directory:
    ```bash
    mkdir -p ~/.config/nvim/colors
    cp neovim.lua ~/.config/nvim/colors/malifex.lua
    ```
 
-3. **Test in Neovim:**
+2. **Set colorscheme in your config:**
+   
+   Add to `~/.config/nvim/init.lua`:
+   ```lua
+   vim.cmd([[colorscheme malifex]])
+   ```
+
+3. **Test immediately in Neovim:**
    ```vim
    :colorscheme malifex
    ```
+   
+   It should apply instantly without asking for updates.
 
-4. **Check for conflicts:**
-   Make sure no other theme plugins are overriding at startup.
+4. **For LazyVim users:**
+   
+   The theme file needs to be in `~/.config/nvim/colors/malifex.lua`, then:
+   ```lua
+   return {
+     {
+       "LazyVim/LazyVim",
+       opts = {
+         colorscheme = "malifex",
+       },
+     },
+   }
+   ```
+
+5. **Restart Neovim:**
+   ```bash
+   nvim
+   ```
+   
+   The theme should now load automatically without requiring updates.
 
 ### Colors Don't Match Screenshots
 

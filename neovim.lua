@@ -1,11 +1,14 @@
 -- Malifex Theme for Neovim
 -- A dark, earthy color scheme with warm tones
 
+-- Clear any existing highlights
 vim.cmd('highlight clear')
+
 if vim.fn.exists('syntax_on') then
   vim.cmd('syntax reset')
 end
 
+-- Set theme properties
 vim.o.background = 'dark'
 vim.g.colors_name = 'malifex'
 
@@ -21,15 +24,13 @@ local colors = {
   magenta = '#f2e5bc',
   cyan = '#ff6b6b',
   white = '#f2e5bc',
-  
-  -- Additional shades
   bg_light = '#1a1a1a',
   bg_lighter = '#2a2a2a',
   gray = '#4d4d4d',
   gray_light = '#6a6a6a',
 }
 
--- Helper function to set highlights
+-- Helper function to set highlights efficiently
 local function hi(group, opts)
   local cmd = 'highlight ' .. group
   if opts.fg then cmd = cmd .. ' guifg=' .. opts.fg end
@@ -164,4 +165,3 @@ hi('WhichKey', { fg = colors.red })
 hi('WhichKeyGroup', { fg = colors.blue })
 hi('WhichKeyDesc', { fg = colors.fg })
 hi('WhichKeySeparator', { fg = colors.gray })
-

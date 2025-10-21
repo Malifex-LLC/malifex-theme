@@ -1,37 +1,27 @@
 /* Malifex Theme for Walker (app launcher) */
-
-* {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
-}
+/* Colors only - preserves your layout configuration */
 
 /* Main window */
 #window {
     background-color: #000000;
-    border: 2px solid #537a5a;
-    border-radius: 8px;
+    border-color: #537a5a;
 }
 
 /* Search input */
 #input {
     background-color: #1a1a1a;
     color: #baa997;
-    border: none;
-    border-bottom: 2px solid #537a5a;
-    padding: 12px;
-    margin: 8px;
-    border-radius: 5px;
+    border-bottom-color: #537a5a;
     caret-color: #baa997;
 }
 
 #input:focus {
-    border-bottom: 2px solid #ff6b6b;
+    border-bottom-color: #ff6b6b;
 }
 
 /* Container boxes */
 #outer-box {
     background-color: #000000;
-    padding: 5px;
 }
 
 #inner-box {
@@ -51,21 +41,18 @@
 #entry {
     background-color: #000000;
     color: #baa997;
-    padding: 8px 12px;
-    margin: 2px 8px;
-    border-radius: 5px;
-    border-left: 3px solid transparent;
+    border-left-color: transparent;
 }
 
 #entry:hover {
     background-color: #1a1a1a;
-    border-left: 3px solid #537a5a;
+    border-left-color: #537a5a;
 }
 
 #entry:selected {
     background-color: #1a1a1a;
     color: #baa997;
-    border-left: 3px solid #ff6b6b;
+    border-left-color: #ff6b6b;
 }
 
 /* Entry text */
@@ -75,13 +62,11 @@
 
 #entry:selected #text {
     color: #baa997;
-    font-weight: bold;
 }
 
 /* Entry icons */
 #icon {
     color: #537a5a;
-    margin-right: 8px;
 }
 
 #entry:selected #icon {
@@ -91,14 +76,11 @@
 /* Matching text highlight */
 .match {
     color: #ff6b6b;
-    font-weight: bold;
 }
 
 /* No results */
 .no-results {
     color: #4d4d4d;
-    padding: 20px;
-    text-align: center;
 }
 
 /* Labels and descriptions */
@@ -108,21 +90,17 @@
 
 #description {
     color: #6a6a6a;
-    font-size: 12px;
 }
 
 /* Scrollbar */
 scrollbar {
     background-color: #000000;
-    border-radius: 5px;
 }
 
 scrollbar slider {
     background-color: #4d4d4d;
-    border-radius: 5px;
 }
 
 scrollbar slider:hover {
     background-color: #6a6a6a;
 }
-

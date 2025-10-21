@@ -33,9 +33,14 @@ omarchy-theme-install https://github.com/YOUR_USERNAME/malifex-theme
 
 This will automatically install the theme for all detected applications on your system.
 
-**⚠️ Post-Install:** Some applications need extra configuration after Omarchy install. See [INSTALL.md](INSTALL.md) for details, especially:
-- Neovim: Add `vim.cmd([[colorscheme malifex]])` to your init.lua
-- Waybar: May need to restart with `killall waybar && waybar &`
+**⚠️ Post-Install:** Some applications need extra configuration after Omarchy install:
+- **Neovim:** Copy `neovim.lua` to `~/.config/nvim/colors/malifex.lua` and add `vim.cmd([[colorscheme malifex]])` to your init.lua
+- **Waybar:** Restart with `killall waybar && waybar &`
+- **Launchers:** If wofi/walker menus look broken, restart them
+
+💡 **Theme Philosophy:** All CSS/config files only apply **colors**, never layouts. Your existing configurations are preserved.
+
+See [INSTALL.md](INSTALL.md) for detailed troubleshooting.
 
 🎨 **Wallpaper Included:** The theme includes `malifex-background-001.png` - a custom wallpaper designed to complement the color scheme. Omarchy will automatically apply it, or use the included `hyprpaper.conf` configuration.
 
