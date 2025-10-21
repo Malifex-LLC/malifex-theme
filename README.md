@@ -13,12 +13,12 @@ A dark, earthy color scheme with warm tones and subtle contrast, designed for co
 | Background | `#000000` | Pure black                     |
 | Foreground | `#baa997` | Warm beige/tan                 |
 | Black      | `#000000` | Terminal black                 |
-| Red        | `#537a5a` | Errors, highlights, sage green |
+| Red        | `#ff6b6b` | Errors, highlights, coral red  |
 | Green      | `#8b2635` | Strings, success, burgundy     |
 | Yellow     | `#baa997` | Types, warnings, beige         |
-| Blue       | `#ff6b6b` | Keywords, functions, coral red |
+| Blue       | `#537a5a` | Functions, info, sage green    |
 | Magenta    | `#f2e5bc` | Constants, cream               |
-| Cyan       | `#537a5a` | Special, sage green            |
+| Cyan       | `#ff6b6b` | Special, coral red             |
 | White      | `#f2e5bc` | Bright text, cream             |
 
 ## Installation
